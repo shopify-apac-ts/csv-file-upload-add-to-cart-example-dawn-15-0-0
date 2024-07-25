@@ -1,0 +1,37 @@
+{{ 'csv-upload.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'csv-upload-table.js' | asset_url }}" async></script>
+<script src="{{ 'csv-upload.js' | asset_url }}" async></script>
+
+<div class="csv-upload-wrapper ">
+  <div class="center">
+    <label for="csvInput" class="custom-file-upload">
+    CSV Upload
+    </label>
+    <input type="file" id="csvInput" name="files" accept=".csv">
+  <br/>
+  <table id="csvTable" class="styled-table center">
+    <thead>
+    <tr>
+      <th>Title</th>
+      <th>SKU</th>
+      <th>Part Number</th>
+      <th>Quantity</th>
+      <th>Action</th> 
+    </tr> 
+    </thead>
+    <tbody>
+    </tbody>
+  </table> 
+  <button class="button add-all-button button--secondary" id="addAllToCart">Add All to Cart</button>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "CSV Upload",
+    "settings": []
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
